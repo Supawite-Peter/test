@@ -25,7 +25,8 @@ func main() {
 		//c.HTML(http.StatusOK,"http.tmpl", nil)
 	})
 
-	router.StaticFS("/static", http.Dir("./static"))
+	//router.StaticFS("/static", http.Dir("./static"))
+	router.Static("/static", "static")
 
 	router.Run(":" + port)
 	//router.RunTLS(":8080", "/home/peter/ssl/leaf.pem", "/home/peter/ssl/leaf.key")
