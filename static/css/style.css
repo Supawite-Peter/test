@@ -1,0 +1,60 @@
+#container1{
+  height: 50%;
+  width: 100%;
+  padding: 0;
+  margin: auto;
+}
+
+#map{
+  height: 100%;
+  width: 50%;
+  float: left;
+  background: red;
+}
+
+#webcam1{
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+
+#frame1 {
+  width: 80%;
+  height: 100%;
+  background-color: #666;
+  margin: auto;
+}
+
+#videoElement1 {
+  width: 100%;
+  height: 100%;
+  background-color: #666;
+}
+
+#container2{
+  height: 50%;
+  width: 100%;
+  padding: 0;
+  margin: auto;
+}
+
+#webcam2{
+  height: 100%;
+  width: 50%;
+  margin: auto;
+}
+
+#frame2 {
+  width: 80%;
+  height: 100%;
+  background-color: #666;
+  margin: auto;
+}
+
+html,
+body{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
