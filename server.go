@@ -20,7 +20,7 @@ func main() {
 	
 	router.LoadHTMLFiles("/template/index.tmpl")	
 
-	router.GET("/main", func(c *gin.Context) {
+	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK,"index.tmpl", nil)
 		//c.HTML(http.StatusOK,"http.tmpl", nil)
 	})
