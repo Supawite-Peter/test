@@ -1,5 +1,5 @@
 #container1{
-  height: 50%;
+  height: 48%;
   width: 100%;
   padding: 0;
   margin: auto;
@@ -32,7 +32,7 @@
 }
 
 #container2{
-  height: 50%;
+  height: 48%;
   width: 100%;
   padding: 0;
   margin: auto;
@@ -48,6 +48,19 @@
   width: 80%;
   height: 100%;
   background-color: #666;
+  margin: auto;
+}
+
+#button {
+  height: 5%;
+  width: 100%;
+  margin: auto;
+}
+
+#connect{
+  height: 100%;
+  width: 25%;
+  padding-top: 0.5%;
   margin: auto;
 }
 
