@@ -14,17 +14,10 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsviPjZmttywhWoL1ybbl_q3dyav2M5CU&callback=initMap&libraries=&v=weekly"
       defer
     ></script>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-
-    <script src="/static/js/jquery-3.5.1.js"></script>
-    <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/adapter-latest.js"></script>
-
-    <script src="/static/js/ovenplayer.js"></script>
-    <script src="/static/js/map.js"></script>
+    <link rel="stylesheet" type="text/css" href="./static/css/style.css" />
+    <script src="./static/js/jquery-3.5.1.js"></script>
+    <script src="./static/js/ovenplayer.js"></script>
+    <script src="./static/js/map.js"></script>
 </head>
 
 <body>
@@ -39,10 +32,19 @@
         </div>
     </div>
 
+    <div id="button">
+        <div id="connect">
+            <button onclick="switchState()">Switch State</button>
+            <button onclick="getStatus()">Get Status</button>
+        </div>
+    </div>
+
+
     <script>
+    
         let webrtcSources1 = OvenPlayer.generateWebrtcUrls([
                 {
-                     host : 'ws://35.164.236.139:3333',
+                     host : 'ws://34.222.11.214:3333',
                      application : 'app',
                      stream : "stream1",
                      label : "stream1"
@@ -51,7 +53,7 @@
 
         let webrtcSources2 = OvenPlayer.generateWebrtcUrls([
                 {
-                     host : 'ws://35.164.236.139:3333',
+                     host : 'ws://34.222.11.214:3333',
                      application : 'app',
                      stream : "stream2",
                      label : "stream2"
@@ -74,6 +76,30 @@
             console.log(error);
         });
         
+    </script>
+
+    <script>
+    function switchState() {
+
+        if (player2.getState() != null) {
+             player2.remove();
+             document.getElementById("container1").style.height = "90%"
+             document.getElementById("container2").style.height = "0%"
+        }
+        else {
+            player2 = OvenPlayer.create("webcam2", {
+                sources: webrtcSources2
+            });
+            document.getElementById("container1").style.height = "45%"
+            document.getElementById("container2").style.height = "45%"
+        }
+    }
+
+    function getStatus() {
+        let T_state = player2.getState();
+        console.log(T_state);
+    }
+	
     </script>
 </body>
 </html>
